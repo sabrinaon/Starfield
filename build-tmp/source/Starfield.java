@@ -25,6 +25,7 @@ public void setup()
     one [i] = new NormalParticle();
   }
   one[1] = new OddballParticle();
+  one[2] = new JumboParticle();
 }
 public void draw()
 {
@@ -88,6 +89,22 @@ class OddballParticle implements Particle
     fill(0, myColor, 100);
     ellipse((float)myX, (float)myY, 30,30);
   }
+}
+
+class JumboParticle extends NormalParticle
+{
+	int myColor;
+	double speed;
+	JumboParticle()
+	{
+		myColor = (200);
+		speed = Math.random()*3;
+	}
+	public void show()
+	{
+		fill(myColor);
+		ellipse((float)myX,(float)myY,100,100);
+	}
 }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Starfield" };
